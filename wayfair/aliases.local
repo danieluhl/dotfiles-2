@@ -1,0 +1,45 @@
+
+alias gdb=deleteBranchName
+function deleteBranchName() {
+  eval 'git branch --list | grep $1 | xargs git branch -D';
+}
+
+alias admin='sudo /Applications/System\ Preferences.app/Contents/MacOS/System\ Preferences'
+
+alias sshdev='ssh -t duhl_gcp_wayfair_com@webphp-duhl-dsm1.c.wf-gcp-us-sds-prod.internal'
+
+# k8s
+
+alias kb='kubectl'
+
+# usage: klogs apollo-gateway-storefront-PODHASH
+function klogs() {
+  kubectl logs $1 -n apollo-gateway-storefront | grep -v "Added encoded trace to buffer" | grep -v "Encoding trace" | grep -v "Request to the agent"
+}
+# usage: kdescribe apollo-gateway-storefront-PODHASH
+function kdescribe() {
+  kubectl describe pod -n $(lookupKubernetesNamespace $1) $2
+}
+function kpods() {
+  kubectl get pods -n $(lookupKubernetesNamespace $1)
+}
+function kevents() {
+  kubectl get events -n $(lookupKubernetesNamespace $1)
+}
+function ksecrets() {
+  kubectl get secrets -n $(lookupKubernetesNamespace $1)
+}
+function kingress() {
+  kubectl get ingress -n $(lookupKubernetesNamespace $1) -o yaml
+}
+
+alias kdevgke="kubectl config use-context gke_wf-gcp-us-k8s-dev_us-east4_c1-iad1"
+alias kdev="kubectl config use-context gke_wf-gcp-us-k8s-dev_us-east4_c1-iad1"
+alias kiad="kubectl config use-context gke_wf-gcp-us-k8s-prod_us-east4_c1-iad1"
+alias kfra="kubectl config use-context gke_wf-gcp-eu-k8s-prod_europe-west3_c1-fra1"
+alias kbo1="kubectl config use-context bo1-kubernetesc2"
+alias kdsm="kubectl config use-context gke_wf-gcp-us-k8s-prod_us-central1_c1-dsm1"
+alias kgrq="kubectl config use-context gke_wf-gcp-eu-k8s-prod_europe-west4_c1-grq1"
+alias kpdx="kubectl config use-context gke_wf-gcp-us-k8s-prod_us-west1_c1-pdx1"
+
+alias localhostproxy="docker run -p 443:443 -v ~/.local-certs:/certs wayfair/local-nginx-proxy"
