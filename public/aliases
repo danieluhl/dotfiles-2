@@ -42,7 +42,7 @@ export DEFAULT_BRANCH='main'
 #     fi
 # }
 
-alias dot='nvim ~/Google\ Drive/My\ Drive/git/dotfiles'
+alias dot='cd ~/Google\ Drive/My\ Drive/git/dotfiles && nvim .'
 alias aliases='nvim ~/.aliases'
 alias reload='source ~/.aliases'
 
@@ -56,7 +56,6 @@ alias wat='alias'
 alias gri='git branch --set-upstream-to=origin/$DEFAULT_BRANCH && git rebase -i'
 alias gri='git rebase -i origin/$DEFAULT_BRANCH'
 alias gprm='git pull --rebase origin $DEFAULT_BRANCH'
-
 
 # git
 alias reload!='. ~/.zshrc && . ~/.zshrc.local'
@@ -310,3 +309,6 @@ alias dkstop='docker stop $(docker ps -q)'
 alias v="nvim ."
 alias vim="nvim"
 alias vimrc="nvim $DOTFILES_PATH/public/config/nvim/init.vim"
+
+# python
+alias py="python3"
