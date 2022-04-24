@@ -311,4 +311,5 @@ alias vim="nvim"
 alias vimrc="nvim $DOTFILES_PATH/public/config/nvim/init.vim"
 
 # python
+alias pip="pip3"
 alias py="python3"
