@@ -5,6 +5,10 @@
 # or to overwrite local with latest of a branch
 # git fetch origin [branch]:[branch] --force
 
+# vim plugin manager
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+# ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+
 DOTFILES_PATH="~/Google\ Drive/My\ Drive/git/dotfiles"
 
 # Setup
@@ -43,12 +47,13 @@ export DEFAULT_BRANCH='main'
 # }
 
 alias dot='cd ~/Google\ Drive/My\ Drive/git/dotfiles && nvim .'
+alias scratch='cd ~/git && nvim scratchpad.txt'
 alias aliases='nvim ~/.aliases'
 alias reload='source ~/.aliases'
 
 alias wat='alias'
 
-# alias c='code .'
+alias c='code .'
 
 # alias pubExt='rm -rf $HOME/.vscode/extensions/vs-code-extensions && cp -R ~/git/vs-code-extensions $HOME/.vscode/extensions'
 
@@ -308,7 +313,7 @@ alias dkstop='docker stop $(docker ps -q)'
 # vim aliases
 alias v="nvim ."
 alias vim="nvim"
-alias vimrc="nvim $DOTFILES_PATH/public/config/nvim/init.vim"
+alias vimrc="cd $DOTFILES_PATH/public/config/nvim/lua/duhl && nvim remap.lua"
 
 # python
 alias pip="pip3"
