@@ -41,7 +41,3 @@
 	auto = 0
 [http]
 	sslVerify = false
-[init]
-	defaultBranch = main
-[hub]
-	host = github.csnzoo.com

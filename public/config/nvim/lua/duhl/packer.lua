@@ -50,6 +50,9 @@ return require('packer').startup(function()
   use 'tpope/vim-vinegar'
   use 'wellle/context.vim'
 
+  -- markdown
+  use 'preservim/vim-markdown'
+
   -- Maybe Future Things I Want
   -- use 'github/copilot.vim'
   use 'mbbill/undotree'
