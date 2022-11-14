@@ -7,18 +7,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
   group = yankGrp,
 })
 
--- ALE plugin settings
-vim.g.ale_linters = {
-    typescript = {'eslint', 'tslint'},
-    ruby = {'rubocop'},
-    jsx = {'stylelint', 'eslint', 'tslint'},
-}
 
-vim.g.ale_fixers = {
-   ['*'] = {'remove_trailing_lines', 'trim_whitespace'},
-  javascript = {'prettier', 'eslint'}
-}
+vim.cmd [[
+let g:VM_maps = {}
+let g:VM_maps['Find Under']         = '<M-d>'           " replace C-n
+let g:VM_maps['Find Subword Under'] = '<M-d>'           " replace visual C-n
 
+]]
 
--- deoplete does autocomplete with ale
-vim.g.deoplete = {enable_at_startup = 1}

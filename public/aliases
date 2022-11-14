@@ -143,6 +143,7 @@ alias killbranch="killBranch"
 alias pushremote="pushRemoteBranch"
 alias gpu="pushRemoteBranch"
 alias pullremote="pullRemoteBranch"
+alias gpl="pullRemoteBranch"
 alias diffremote="diffRemoteBranch"
 alias gs="git status" # upgrade your git if -sb breaks for you. it's fun.
 alias seediff="git difftool $DEFAULT_BRANCH"

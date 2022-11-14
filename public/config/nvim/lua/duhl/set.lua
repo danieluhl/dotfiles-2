@@ -1,17 +1,56 @@
-vim.opt.guicursor = ""
+local opts = {
 
-vim.opt.nu = true
+	nu = true,
 
--- ****************
--- SETTINGS
--- ****************
+	-- Nice menu when typing `:find *.py`
+	wildmode = { "longest", "list", "full" },
+	wildmenu = true,
 
--- Not sure what this does
---vim.opt.path+=**
+	-- Colors
 
--- Nice menu when typing `:find *.py`
-vim.opt.wildmode={"longest","list","full"}
-vim.opt.wildmenu = true
+	termguicolors = true,
+
+	guicursor = "i:ver100", -- cursor to line in insert mode,
+	clipboard = "unnamedplus", -- allow neovim to access clipboard,
+	number = true,
+	relativenumber = true,
+	tabstop = 2,
+	smartindent = true,
+	shiftwidth = 2,
+	undofile = true,
+	autoindent = true,
+	cursorline = true,
+	scrolloff = 8,
+	expandtab = true,
+	hlsearch = false,
+	undodir = os.getenv("HOME") .. "/.local/share/nvim/undo",
+	swapfile = false,
+	ignorecase = true,
+	showmode = false,
+	showtabline = 2,
+	smartcase = true,
+	laststatus = 2,
+	incsearch = true,
+	backup = false,
+	errorbells = false,
+	textwidth = 80,
+	wrapmargin = 2,
+	wrap = false,
+	signcolumn = "number",
+	backspace = { "indent", "eol", "start" },
+	pyxversion = 3,
+	compatible = false,
+	cmdheight = 2,
+	updatetime = 300,
+
+	-- JavaScript
+	conceallevel = 0,
+	compatible = false,
+}
+
+for k, v in pairs(opts) do
+	vim.opt[k] = v
+end
 
 -- Ignore files
 --vim.opt.wildignore:append{*_build/*
@@ -21,42 +60,9 @@ vim.opt.wildmenu = true
 --vim.opt.wildignore:append{**/ios/*
 --vim.opt.wildignore:append{**/.git/*
 
--- Colors
-vim.opt.termguicolors = true
+vim.opt.shortmess:append({ c = true })
 
--- Other Settings
-vim.opt.number = true
-vim.opt.relativenumber = true
-vim.opt.tabstop=2
-vim.opt.shiftwidth=2
-vim.opt.smartindent = true
-vim.opt.autoindent = true
-vim.opt.scrolloff=8
-vim.opt.expandtab = true
-vim.opt.hlsearch = false
-vim.opt.undofile = true
-vim.opt.undodir = os.getenv( "HOME" ) .. "/.local/share/nvim/undo"
-vim.opt.swapfile = false
-vim.opt.ignorecase = true
-vim.opt.smartcase = true
-vim.opt.laststatus=2
-vim.opt.incsearch = true
-vim.opt.backup = false
-vim.opt.errorbells = false
-vim.opt.textwidth=80
-vim.opt.wrapmargin=2
-vim.opt.wrap = false
-vim.opt.signcolumn="number"
-vim.opt.backspace={"indent","eol","start"}
-vim.opt.pyxversion=3
-vim.opt.compatible = false
-vim.opt.cmdheight=2
-vim.opt.updatetime=300
-vim.opt.shortmess:append{c = true}
+vim.cmd([[set iskeyword+=-]])
 
--- JavaScript
-vim.opt.conceallevel = 0
-vim.opt.compatible = false
-
-
+vim.loaded_matchit = 1
 

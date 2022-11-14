@@ -1,3 +1,4 @@
 # Add ssh keys
 
 
+. "$HOME/.cargo/env"

@@ -1,3 +1,4 @@
+/* instead, run `npm init @eslint/config` */
 {
   "ecmaFeatures": {
     "jsx": true,
@@ -7,7 +8,7 @@
     "browser": true,
     "node": true
   },
-  "parser": "babel-eslint",
+  "parser": "/usr/local/lib/node_modules/babel-eslint",
   "rules": {
     "quotes": [2, "single"],
     "strict": [2, "never"],
