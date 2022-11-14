@@ -3,5 +3,6 @@ public/config/gh
 *.sw
 *~
 wayfair
+local
 public/config/exercism
 
